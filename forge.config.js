@@ -6,7 +6,7 @@ const config = {
   packagerConfig: {
     name: 'LockLogger',
     executableName: 'lock-logger',
-    asar: true,
+    asar: false,
     icon: path.resolve(__dirname, 'static', 'icon'),
     win32metadata: {
       CompanyName: 'Felix Rieseberg',

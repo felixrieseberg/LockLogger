@@ -9,11 +9,11 @@ class Logger {
     this.powershellWatcher = new PowerShellWatcher()
 
     this.electronWatcher.on('change', (change) => {
-      log.info(`Electron:`, change)
+      log.info(`Electron: New state:`, change)
     })
 
     this.powershellWatcher.on('change', (change) => {
-      log.info(`PowerShell:`, change)
+      log.info(`PowerShell: New state:`, change)
     })
 
     this.electronWatcher.watch()

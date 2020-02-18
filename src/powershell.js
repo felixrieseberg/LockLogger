@@ -78,8 +78,7 @@ class PowerShellWatcher extends EventEmitter {
     const shouldEmit = !isEqual(newState, this.lastState)
 
     if (shouldEmit) {
-      const message = this.lastState ? 'Initial state: ' : 'Change detected: '
-      this.emit('change', message, newState)
+      this.emit('change', newState)
     }
 
     this.lastState = newState
