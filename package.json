@@ -1,0 +1,27 @@
+{
+  "name": "LockLogger",
+  "productName": "LockLogger",
+  "keywords": [],
+  "main": "./src/main.js",
+  "version": "1.0.0",
+  "author": "felix",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {
+    "electron-log": "^4.0.6",
+    "lodash.isequal": "^4.5.0"
+  },
+  "devDependencies": {
+    "electron": "8.0.1",
+    "@electron-forge/cli": "6.0.0-beta.49",
+    "@electron-forge/maker-zip": "6.0.0-beta.49"
+  },
+  "config": {
+    "forge": "./forge.config.js"
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>LockLogger</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+      font-size: 1em;
+    }
+
+    div {
+      background: #ffecd9;
+      display: flex;
+      margin: 0;
+      place-items: center;
+      padding: 1rem;
+      flex-direction: column;
+      height: 100vh;
+      border-radius: 5px;
+      box-sizing: border-box;
+      -webkit-app-region: drag;
+    }
+
+    button {
+      -webkit-appearance: none;
+      background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+      background-size: 500%;
+      border: none;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      color: #fff;
+      cursor: pointer;
+      -webkit-font-smoothing: antialiased;
+      height: 5rem;
+      letter-spacing: 0.05em;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      width: 20rem;
+      font-size: 1rem;
+      height: 3rem;
+    }
+
+    button:hover {
+      animation-name: gradient;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <small></small>
+  <div>
+    <p>This logger is now active and watching your lock state.</p>
+    <button>Show Logs in Explorer 🌴</button>
+  </div>
+  <script>
+    const { shell } = require('electron')
+    const log = require('electron-log')
+
+    const button = document.querySelector('button')
+    const path = log.transports.file.getFile().path
+    button.onclick = () => shell.showItemInFolder(path)
+  </script>
+</body>
+
+</html>
